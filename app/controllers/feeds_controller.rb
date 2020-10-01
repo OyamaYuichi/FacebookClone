@@ -4,7 +4,7 @@ class FeedsController < ApplicationController
   before_action :need_login, only: [:new, :edit, :show, :destroy]
 
   def index
-    @feeds = Feed.all
+    @feeds = Feed.all.order(created_at: :desc)
     @user = current_user
   end
 
