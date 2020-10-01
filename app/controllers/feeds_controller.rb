@@ -5,6 +5,7 @@ class FeedsController < ApplicationController
 
   def index
     @feeds = Feed.all
+    @user = current_user
   end
 
   def show
