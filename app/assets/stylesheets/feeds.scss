@@ -1,3 +1,80 @@
 // Place all the styles related to the feeds controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+#accordion {
+  clear: both;
+  width: 100px;
+  float: right;
+}
+#accordion dt {
+  border-bottom: solid 1px white;
+  background-color: transparent;
+  cursor: pointer;
+  // padding: 10px;
+  font-weight: bold;
+  margin-top: 5px;
+  padding-bottom: 10px;
+}
+#accordion dd {
+  border: solid 1px #ccc;
+  margin: 0px;
+  padding: 5px 0 5px 0;
+}
+h4{
+  background-color: aliceblue;
+  padding-top: 10px;
+  padding-bottom: 5px;
+  margin-top: 0;
+  border-radius: 5px 5px 0 0;
+
+}
+#user_name a{
+  color: #3578E5;
+  margin-right: 250px;
+}
+.center{
+  text-align: center;
+}
+.field #file_field{
+  margin-left: 150px;
+}
+textarea{
+  width: 400px;
+  height: 200px;
+}
+
+#feed_content{
+  float: left;
+  clear: both;
+  margin: 0 10px 10px 10px;
+}
+
+p{
+  clear: both;
+}
+#text{
+  clear: both;
+  margin-left: 30px;
+  margin-top: 0;
+}
+
+.field{
+  clear: both;
+}
+
+#subject{
+  padding-top: 10px;
+}
+
+#content_label{
+  margin-top: 10px;
+}
+
+.submit{
+  margin-left: 400px;
+  margin-top: 30px;
+}
+
+#content_label{
+  padding-top: 30px;
+}

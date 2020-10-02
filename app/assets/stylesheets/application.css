@@ -14,20 +14,40 @@
  *= require_tree .
  *= require_self
  */
-
+div.notice{
+  color: green;
+  text-align: center;
+}
 body{
   background-color: #e9ebee;
   margin: 0;
 }
+
+#photo img{
+    width: 100%;
+}
+
+p {
+  word-break: break-all;
+}
+
+.container{
+  margin-bottom: 50px;
+}
 .content{
   background-color: white;
   text-align: center;
-  margin-top: 10px;
+  margin-top: 20px;
+  padding: 0;
+  border-radius: 5px;
 }
 .container-fluid{
   background-color: #3578E5;
 }
 
+nav.navbar.navbar-default{
+  margin: 0;
+}
 .navbar-default .navbar-brand{
   color: white;
 }
@@ -55,6 +75,15 @@ body{
   .navbar .navbar-default{
     float: left;
     background-color: red;
+    margin: 0;
+  }
+  input.form-control{
+    width: 100% !important;
+  }
+  .input-group{
+    width: 200px;
+    margin-right: 100px;
+    width: 100% !important;
   }
 }
 @media screen and (min-width: 767px) {
@@ -64,5 +93,14 @@ body{
   .navbar-nav >li {
     float: left;
   }
+  input.form-control{
+    width: 300px !important;
+  }
+  .input-group{
+    width: 200px;
+    padding-top: 8px;
+    margin-right: 50px;
+  }
 }
+
 

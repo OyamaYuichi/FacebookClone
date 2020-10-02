@@ -1,17 +1,29 @@
-<h1><%= @user.name %>のページ</h1>
-<p>メールアドレス: <%= @user.email %></p>
+<div id="profile">
+  <h1><%= @user.name %>のページ</h1>
+  <p>メールアドレス: <%= @user.email %></p>
+</div>
 <div class="container">
   <% @feeds.each do |feed| %>
     <div class="row">
       <div class="col-md-3"></div>
         <div class="content col-md-6">
-          <p><%= feed.content %></p>
-          <p><%= image_tag feed.image.url %></p>
+          <dl id="accordion">
+            <dt >…</dt>
+              <dd><%= link_to '詳細', feed %></dd>
+              <% if current_user == feed.user %>
+                <dd><%= link_to '編集', edit_feed_path(feed) %></dd>
+                <dd><%= link_to '削除', feed, method: :delete, data: { confirm: '本当に削除しますか?' } %></dd>
+              <% end %>
+          </dl>
+          <h4 id="user_name"><%= link_to feed.user.name, user_path(feed.user.id) %></h4>
+          <p id="feed_content"><%= feed.content %></p>
+          <p id="photo"><%= image_tag feed.image.url %></p>
+          <p><%= link_to '♡いいね！', feed %></p>
         </div>
       <div class="col-md-3"></div>
     </div>
   <% end %>
 </div>
 
-<%= link_to '投稿する', new_feed_path %>
-<%= link_to "ホームに戻る", feeds_path %>
+<p class="center"><%= link_to '投稿する', new_feed_path %></p>
+<p class="center"><%= link_to "ホームに戻る", feeds_path %></p>

@@ -20,12 +20,26 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">FacebookClone</a>
+
+            <a class="navbar-brand" href="http://localhost:3000">FacebookClone</a>
+
           </div>
           <div id="gnavi" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
               <% if logged_in? %>
-                <li><%= link_to current_user.name, user_path(current_user.id) %></li>
+                <li>
+                  <div class="row">
+                    <div class="col-lg-6">
+                      <div class="input-group">
+                        <input type="text" class="form-control" placeholder="検索">
+                        <span class="input-group-btn">
+                          <button class="btn btn-default" type="button">🔍</button>
+                        </span>
+                      </div><!-- /input-group -->
+                    </div><!-- /.col-lg-6 -->
+                  </div><!-- /.row -->
+                </li>
+                <li class="user"><%= link_to current_user.name, user_path(current_user.id) %></li>
                 <li><%= link_to "ホーム", feeds_path %></li>
                 <li><%= link_to '投稿', new_feed_path %></li>
                 <li><%= link_to "ログアウト", session_path(current_user.id), method: :delete ,data: { confirm: 'ログアウトしますか？' }%></li>
@@ -40,7 +54,7 @@
     </header>
 
     <% flash.each do |key, value| %>
-      <%= content_tag(:div, value, class: "#{key}") %>
+      <p id="notice"><%= content_tag(:div, value, class: "#{key}") %></p>
     <% end %>
       <%= yield %>
   </body>

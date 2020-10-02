@@ -1,14 +1,15 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+  <div class="row">
+    <div class="col-md-3"></div>
+    <div class="content col-md-6">
+      <p id="feed_content"><%= @feed.content %></p>
+      <p id="photo"><%= image_tag @feed.image.url %></p>
+      <p class="center"><%= link_to '編集', edit_feed_path(@feed) %></p>
+      <p class="center"><%= link_to '削除', @feed, method: :delete, data: { confirm: '本当に削除しますか?' } %></p>
+    </div>
+    <div class="col-md-3"></div>
+  </div>
+ </div>
+<p class="center"><%= link_to '戻る', feeds_path %></p>
 
-<p>
-  <strong>Image:</strong>
-  <%= image_tag @feed.image.url %>
-</p>
 
-<p>
-  <strong>Content:</strong>
-  <%= @feed.content %>
-</p>
-
-<%= link_to 'Edit', edit_feed_path(@feed) %> |
-<%= link_to 'Back', feeds_path %>
