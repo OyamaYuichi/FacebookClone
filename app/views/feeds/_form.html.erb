@@ -3,11 +3,9 @@
     <div class="row">
       <div class="col-md-3"></div>
         <div class="content col-md-6">
-
           <% if feed.errors.any? %>
             <div id="error_explanation">
               <h2><%= pluralize(feed.errors.count, "error") %> prohibited this feed from being saved:</h2>
-
               <ul>
               <% feed.errors.full_messages.each do |message| %>
                 <li><%= message %></li>
@@ -26,13 +24,11 @@
             <p><%= image_tag(@feed.image.url) if @feed.image && @feed.image.url %></p>
             <p><%= form.hidden_field :image_cache %></p>
           </div>
-
-
           <div class="actions">
             <p class="submit"><%= form.submit value="投稿" %></p>
           </div>
-          <div class="col-md-3"></div>
-      </div>
+        </div>
+        <div class="col-md-3"></div>
     </div>
   <% end %>
 </div>
