@@ -58,6 +58,8 @@ class FeedsController < ApplicationController
     end
   end
 
+
+
   def destroy
     if current_user == @feed.user
       @feed.destroy
