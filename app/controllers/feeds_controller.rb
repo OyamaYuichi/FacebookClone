@@ -69,18 +69,18 @@ class FeedsController < ApplicationController
   end
 
   private
-    def set_feed
-      @feed = Feed.find(params[:id])
-    end
+  def set_feed
+    @feed = Feed.find(params[:id])
+  end
 
-    def feed_params
-      params.require(:feed).permit(:image, :content, :image_cache)
-    end
+  def feed_params
+    params.require(:feed).permit(:image, :content, :image_cache)
+  end
 
-    def need_login
-      unless logged_in?
-        authenticate_user
-      end
+  def need_login
+    unless logged_in?
+      authenticate_user
     end
+  end
 
 end
