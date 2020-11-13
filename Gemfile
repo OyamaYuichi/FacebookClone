@@ -23,6 +23,12 @@ gem 'bootsnap', '>= 1.1.0', require: false
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'spring'
+  gem 'rspec-rails'
+  gem 'spring-commands-rspec'
+  gem 'factory_bot_rails'
+  gem 'faker'
+  gem 'launchy'
 end
 
 group :development do
@@ -33,9 +39,10 @@ group :development do
 end
 
 group :test do
+  gem 'webdrivers'
+
   gem 'capybara', '>= 2.15'
   gem 'selenium-webdriver'
-  gem 'chromedriver-helper'
 end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
@@ -46,3 +53,5 @@ gem 'mini_magick'
 gem 'bcrypt', '3.1.11'
 
 gem 'jquery-rails'
+
+
